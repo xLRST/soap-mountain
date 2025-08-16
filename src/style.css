@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #0b1426 0%, #1a2456 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+svg {
+    width: 90vw;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    position: relative; /* Allow absolute positioning of floating elements */
+}
+
+.floating {
+    position: absolute;
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust the height of the float */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+p {
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure text is above SVG elements */
+}

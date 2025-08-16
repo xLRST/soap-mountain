@@ -1,0 +1,22 @@
+{
+  "name": "soap-mountain",
+  "version": "1.0.0",
+  "description": "A dynamic web page featuring a floating mountain scene.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined yet.'"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "svg",
+    "animation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
