@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img">
+    <div class="scene-container">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" class="scene-svg">
         <defs>
             <linearGradient id="sunGradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#ffad5a" />
@@ -33,27 +34,24 @@
                 <stop offset="100%" stop-color="#5a7bc4" />
             </linearGradient>
         </defs>
-        
-        <ellipse cx="120" cy="90" rx="25" ry="8" fill="url(#cloudGradient)" opacity="0.7"/>
-        <ellipse cx="105" cy="85" rx="15" ry="6" fill="url(#cloudGradient)" opacity="0.7"/>
-        <ellipse cx="320" cy="80" rx="30" ry="10" fill="url(#cloudGradient)" opacity="0.7"/>
-        <ellipse cx="300" cy="75" rx="20" ry="7" fill="url(#cloudGradient)" opacity="0.7"/>
-        
-        <circle cx="200" cy="100" r="55" fill="url(#sunGradient)" />
-        
-        <path fill="#364080" d="M0 300 L80 200 L120 230 L160 180 L220 200 L280 160 L350 190 L400 220 L400 400 L0 400 Z" />
-        <path fill="#4a5896" d="M50 320 L100 250 L150 270 L200 240 L250 260 L300 230 L370 250 L400 280 L400 400 L0 400 Z" />
-        
-        <path fill="url(#mainMountainGradient)" d="M80 400 L120 200 L160 220 L200 140 L240 180 L280 160 L320 400 Z" />
-        
-        <path fill="url(#peakHighlight)" d="M160 220 L200 140 L240 180 L220 200 L180 240 Z" />
-        
+        <!-- Nuvole animate -->
+        <ellipse class="cloud cloud1" cx="120" cy="90" rx="25" ry="8" fill="url(#cloudGradient)" opacity="0.7"/>
+        <ellipse class="cloud cloud2" cx="105" cy="85" rx="15" ry="6" fill="url(#cloudGradient)" opacity="0.7"/>
+        <ellipse class="cloud cloud3" cx="320" cy="80" rx="30" ry="10" fill="url(#cloudGradient)" opacity="0.7"/>
+        <ellipse class="cloud cloud4" cx="300" cy="75" rx="20" ry="7" fill="url(#cloudGradient)" opacity="0.7"/>
+        <!-- Sole animato -->
+        <circle class="sun" cx="200" cy="100" r="55" fill="url(#sunGradient)" />
+        <!-- Montagne -->
+        <path class="mountain-back" fill="#364080" d="M0 300 L80 200 L120 230 L160 180 L220 200 L280 160 L350 190 L400 220 L400 400 L0 400 Z" />
+        <path class="mountain-mid" fill="#4a5896" d="M50 320 L100 250 L150 270 L200 240 L250 260 L300 230 L370 250 L400 280 L400 400 L0 400 Z" />
+        <path class="mountain-main" fill="url(#mainMountainGradient)" d="M80 400 L120 200 L160 220 L200 140 L240 180 L280 160 L320 400 Z" />
+        <path class="mountain-highlight" d="M160 220 L200 140 L240 180 L220 200 L180 240 Z" fill="url(#peakHighlight)" />
         <path fill="#6b4a9f" d="M160 220 L180 200 L200 220 L180 240 Z" />
         <path fill="#8a5fbf" d="M200 140 L220 160 L240 180 L220 200 Z" />
         <path fill="#4a3870" d="M120 200 L140 240 L160 220 L140 200 Z" />
         <path fill="#5a4880" d="M240 180 L260 200 L280 160 L260 180 Z" />
-        
-        <g fill="#1a1a2e">
+        <!-- Alberi in primo piano (gruppo animato) -->
+        <g class="trees">
             <path d="M60 400 L70 350 L80 400 Z" />
             <path d="M50 400 L60 360 L70 400 Z" />
             <path d="M80 400 L90 340 L100 400 Z" />
@@ -67,19 +65,17 @@
             <path d="M280 400 L288 365 L296 400 Z" />
             <path d="M340 400 L348 350 L356 400 Z" />
         </g>
-        
-        <path fill="url(#riverGradient)" d="M120 400 Q160 350 200 360 Q240 370 280 350 Q320 340 360 355 L400 400 L120 400 Z" />
-        
-        <path fill="#ff8a9b" d="M140 400 Q180 365 200 370 Q220 375 240 365 L240 400 Z" opacity="0.6" />
-        <path fill="#ffad7a" d="M160 400 Q190 375 210 380 Q230 385 250 375 L250 400 Z" opacity="0.4" />
-        <path fill="#ff6b8a" d="M180 400 Q200 385 220 390 Q240 395 260 385 L260 400 Z" opacity="0.5" />
-        
-        <ellipse cx="190" cy="385" rx="15" ry="3" fill="#ffad7a" opacity="0.7" />
-        <ellipse cx="220" cy="390" rx="12" ry="2" fill="#ff8a9b" opacity="0.8" />
-        <ellipse cx="250" cy="380" rx="18" ry="4" fill="#ff6b8a" opacity="0.6" />
+        <!-- Fiume e riflessi animati -->
+        <path class="river" fill="url(#riverGradient)" d="M120 400 Q160 350 200 360 Q240 370 280 350 Q320 340 360 355 L400 400 L120 400 Z" />
+        <path class="reflection reflection1" fill="#ff8a9b" d="M140 400 Q180 365 200 370 Q220 375 240 365 L240 400 Z" opacity="0.6" />
+        <path class="reflection reflection2" fill="#ffad7a" d="M160 400 Q190 375 210 380 Q230 385 250 375 L250 400 Z" opacity="0.4" />
+        <path class="reflection reflection3" fill="#ff6b8a" d="M180 400 Q200 385 220 390 Q240 395 260 385 L260 400 Z" opacity="0.5" />
+        <ellipse class="reflection reflection4" cx="190" cy="385" rx="15" ry="3" fill="#ffad7a" opacity="0.7" />
+        <ellipse class="reflection reflection5" cx="220" cy="390" rx="12" ry="2" fill="#ff8a9b" opacity="0.8" />
+        <ellipse class="reflection reflection6" cx="250" cy="380" rx="18" ry="4" fill="#ff6b8a" opacity="0.6" />
     </svg>
-
-    <p style="color: white; text-align: center;">Soap-Mountain</p>
+    </div>
+    <p class="scene-title">Soap-Mountain</p>
     <script src="main.js"></script>
 </body>
 </html>

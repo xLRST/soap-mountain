@@ -1,42 +1,91 @@
 body {
-    margin: 0;
-    background: linear-gradient(180deg, #0b1426 0%, #1a2456 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: sans-serif;
-    overflow: hidden; /* Prevent scrollbars from appearing */
+  margin: 0;
+  background: linear-gradient(180deg, #2d2456 0%, #4a5d8f 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-
-svg {
-    width: 90vw;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    position: relative; /* Allow absolute positioning of floating elements */
+.scene-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.floating {
-    position: absolute;
-    animation: float 3s ease-in-out infinite; /* Floating animation */
+.scene-svg {
+  width: 90vw;
+  max-width: 600px;
+  height: auto;
+  display: block;
 }
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Adjust the height of the float */
-    }
-    100% {
-        transform: translateY(0);
-    }
+.scene-title {
+  color: #fff;
+  text-align: center;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2rem;
+  margin-top: 0.5em;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px #2d2456;
 }
-
-p {
-    color: white;
-    text-align: center;
-    position: relative;
-    z-index: 1; /* Ensure text is above SVG elements */
+/* Animazioni nuvole */
+.cloud1 { animation: floatCloud1 16s ease-in-out infinite alternate; }
+.cloud2 { animation: floatCloud2 18s ease-in-out infinite alternate; }
+.cloud3 { animation: floatCloud3 20s ease-in-out infinite alternate; }
+.cloud4 { animation: floatCloud4 22s ease-in-out infinite alternate; }
+@keyframes floatCloud1 {
+  0% { transform: translateX(0px) translateY(0px); }
+  100% { transform: translateX(20px) translateY(8px); }
+}
+@keyframes floatCloud2 {
+  0% { transform: translateX(0px) translateY(0px); }
+  100% { transform: translateX(18px) translateY(6px); }
+}
+@keyframes floatCloud3 {
+  0% { transform: translateX(0px) translateY(0px); }
+  100% { transform: translateX(-25px) translateY(10px); }
+}
+@keyframes floatCloud4 {
+  0% { transform: translateX(0px) translateY(0px); }
+  100% { transform: translateX(-18px) translateY(7px); }
+}
+/* Sole fluttuante */
+.sun {
+  animation: floatSun 10s ease-in-out infinite alternate;
+}
+@keyframes floatSun {
+  0% { transform: translateY(0px); filter: brightness(1); }
+  100% { transform: translateY(-8px); filter: brightness(1.08); }
+}
+/* Alberi in primo piano (leggero movimento) */
+.trees path {
+  transform-origin: 50% 100%;
+  animation: swayTree 4s ease-in-out infinite alternate;
+}
+.trees path:nth-child(2n) {
+  animation-delay: 1s;
+}
+.trees path:nth-child(3n) {
+  animation-delay: 2s;
+}
+@keyframes swayTree {
+  0% { transform: rotate(-1deg); }
+  100% { transform: rotate(2deg); }
+}
+/* Riflessi animati (onde leggere) */
+.reflection {
+  animation: waveReflection 6s ease-in-out infinite alternate;
+}
+.reflection1 { animation-delay: 0s; }
+.reflection2 { animation-delay: 1s; }
+.reflection3 { animation-delay: 2s; }
+.reflection4 { animation-delay: 0.5s; }
+.reflection5 { animation-delay: 1.5s; }
+.reflection6 { animation-delay: 2.5s; }
+@keyframes waveReflection {
+  0% { transform: scaleX(1) translateY(0px); opacity: 0.7; }
+  100% { transform: scaleX(1.05) translateY(-4px); opacity: 1; }
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .scene-svg { max-width: 98vw; }
+  .scene-title { font-size: 1.2rem; }
 }
