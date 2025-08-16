@@ -8,71 +8,56 @@
 </head>
 <body>
     <div class="scene-container">
-    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" class="scene-svg">
+    <svg viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg" role="img" class="scene-svg">
         <defs>
+            <!-- Gradienti aggiornati per colori saturi -->
             <linearGradient id="sunGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffad5a" />
-                <stop offset="100%" stop-color="#ff6b8a" />
+                <stop offset="0%" stop-color="#ffcf6b" />
+                <stop offset="100%" stop-color="#ff5e62" />
             </linearGradient>
-            <linearGradient id="mainMountainGradient" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#8b5fbf" />
-                <stop offset="50%" stop-color="#5a4a8f" />
-                <stop offset="100%" stop-color="#2d2456" />
+            <linearGradient id="mountainGradient" x1="0.5" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stop-color="#ffb6b9" />
+                <stop offset="60%" stop-color="#7b2ff2" />
+                <stop offset="100%" stop-color="#2d1456" />
             </linearGradient>
-            <linearGradient id="peakHighlight" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#d689c3" />
-                <stop offset="100%" stop-color="#a764bf" />
+            <linearGradient id="mountainShadow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffb6b9" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#7b2ff2" stop-opacity="0.2"/>
             </linearGradient>
-            <linearGradient id="riverGradient" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#2d2456" />
-                <stop offset="30%" stop-color="#4a5d8f" />
-                <stop offset="70%" stop-color="#4a5d8f" />
-                <stop offset="100%" stop-color="#2d2456" />
+            <linearGradient id="riverGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ff5e62" />
+                <stop offset="100%" stop-color="#2d1456" />
             </linearGradient>
             <linearGradient id="cloudGradient" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#8b5fbf" />
-                <stop offset="100%" stop-color="#5a7bc4" />
+                <stop offset="0%" stop-color="#ffb6b9" />
+                <stop offset="100%" stop-color="#b993d6" />
             </linearGradient>
         </defs>
         <!-- Nuvole animate -->
-        <ellipse class="cloud cloud1" cx="120" cy="90" rx="25" ry="8" fill="url(#cloudGradient)" opacity="0.7"/>
-        <ellipse class="cloud cloud2" cx="105" cy="85" rx="15" ry="6" fill="url(#cloudGradient)" opacity="0.7"/>
-        <ellipse class="cloud cloud3" cx="320" cy="80" rx="30" ry="10" fill="url(#cloudGradient)" opacity="0.7"/>
-        <ellipse class="cloud cloud4" cx="300" cy="75" rx="20" ry="7" fill="url(#cloudGradient)" opacity="0.7"/>
-        <!-- Sole animato -->
-        <circle class="sun" cx="200" cy="100" r="55" fill="url(#sunGradient)" />
-        <!-- Montagne -->
-        <path class="mountain-back" fill="#364080" d="M0 300 L80 200 L120 230 L160 180 L220 200 L280 160 L350 190 L400 220 L400 400 L0 400 Z" />
-        <path class="mountain-mid" fill="#4a5896" d="M50 320 L100 250 L150 270 L200 240 L250 260 L300 230 L370 250 L400 280 L400 400 L0 400 Z" />
-        <path class="mountain-main" fill="url(#mainMountainGradient)" d="M80 400 L120 200 L160 220 L200 140 L240 180 L280 160 L320 400 Z" />
-        <path class="mountain-highlight" d="M160 220 L200 140 L240 180 L220 200 L180 240 Z" fill="url(#peakHighlight)" />
-        <path fill="#6b4a9f" d="M160 220 L180 200 L200 220 L180 240 Z" />
-        <path fill="#8a5fbf" d="M200 140 L220 160 L240 180 L220 200 Z" />
-        <path fill="#4a3870" d="M120 200 L140 240 L160 220 L140 200 Z" />
-        <path fill="#5a4880" d="M240 180 L260 200 L280 160 L260 180 Z" />
-        <!-- Alberi in primo piano (gruppo animato) -->
-        <g class="trees">
-            <path d="M60 400 L70 350 L80 400 Z" />
-            <path d="M50 400 L60 360 L70 400 Z" />
-            <path d="M80 400 L90 340 L100 400 Z" />
-            <path d="M90 400 L100 355 L110 400 Z" />
-            <path d="M290 400 L300 350 L310 400 Z" />
-            <path d="M310 400 L320 340 L330 400 Z" />
-            <path d="M330 400 L340 355 L350 400 Z" />
-            <path d="M350 400 L360 345 L370 400 Z" />
-            <path d="M40 400 L48 365 L56 400 Z" />
-            <path d="M105 400 L112 360 L119 400 Z" />
-            <path d="M280 400 L288 365 L296 400 Z" />
-            <path d="M340 400 L348 350 L356 400 Z" />
+        <ellipse class="cloud cloud1" cx="200" cy="180" rx="70" ry="25" fill="url(#cloudGradient)" opacity="0.7"/>
+        <ellipse class="cloud cloud2" cx="600" cy="200" rx="60" ry="20" fill="url(#cloudGradient)" opacity="0.7"/>
+        <!-- Sole centrale e grande -->
+        <circle class="sun" cx="400" cy="260" r="140" fill="url(#sunGradient)" />
+        <!-- Montagna principale appuntita -->
+        <path class="mountain-main" fill="url(#mountainGradient)" d="M120,1000 Q400,350 680,1000 Z" />
+        <!-- Highlight sulla cresta -->
+        <path class="mountain-highlight" fill="url(#mountainShadow)" d="M400,350 Q440,500 420,700 Q410,900 400,1000 Q390,900 380,700 Q360,500 400,350 Z" />
+        <!-- Montagne secondarie -->
+        <path class="mountain-back" fill="#3d1c5e" opacity="0.7" d="M0,1100 Q200,700 400,950 Q600,700 800,1100 L800,1200 L0,1200 Z" />
+        <!-- Alberi in primo piano -->
+        <g class="trees" fill="#1a0933">
+            <path d="M160 1200 L180 1120 L200 1200 Z" />
+            <path d="M120 1200 L140 1140 L160 1200 Z" />
+            <path d="M600 1200 L620 1130 L640 1200 Z" />
+            <path d="M700 1200 L720 1140 L740 1200 Z" />
+            <path d="M80 1200 L100 1150 L120 1200 Z" />
+            <path d="M680 1200 L700 1150 L720 1200 Z" />
         </g>
-        <!-- Fiume e riflessi animati -->
-        <path class="river" fill="url(#riverGradient)" d="M120 400 Q160 350 200 360 Q240 370 280 350 Q320 340 360 355 L400 400 L120 400 Z" />
-        <path class="reflection reflection1" fill="#ff8a9b" d="M140 400 Q180 365 200 370 Q220 375 240 365 L240 400 Z" opacity="0.6" />
-        <path class="reflection reflection2" fill="#ffad7a" d="M160 400 Q190 375 210 380 Q230 385 250 375 L250 400 Z" opacity="0.4" />
-        <path class="reflection reflection3" fill="#ff6b8a" d="M180 400 Q200 385 220 390 Q240 395 260 385 L260 400 Z" opacity="0.5" />
-        <ellipse class="reflection reflection4" cx="190" cy="385" rx="15" ry="3" fill="#ffad7a" opacity="0.7" />
-        <ellipse class="reflection reflection5" cx="220" cy="390" rx="12" ry="2" fill="#ff8a9b" opacity="0.8" />
-        <ellipse class="reflection reflection6" cx="250" cy="380" rx="18" ry="4" fill="#ff6b8a" opacity="0.6" />
+        <!-- Fiume e riflessi -->
+        <path class="river" fill="url(#riverGradient)" d="M300 1200 Q400 900 500 1200 Z" />
+        <ellipse class="reflection reflection1" cx="400" cy="1100" rx="120" ry="18" fill="#ffb6b9" opacity="0.5" />
+        <ellipse class="reflection reflection2" cx="400" cy="1150" rx="90" ry="12" fill="#ffcf6b" opacity="0.4" />
+        <ellipse class="reflection reflection3" cx="400" cy="1180" rx="60" ry="8" fill="#ff5e62" opacity="0.5" />
     </svg>
     </div>
     <p class="scene-title">Soap-Mountain</p>

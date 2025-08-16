@@ -96,3 +96,4 @@ document.addEventListener("DOMContentLoaded", () => {
     animateReflections();
     animateTrees();
 });
+// (nessuna modifica necessaria, le classi e animazioni sono già compatibili con la nuova struttura SVG)
